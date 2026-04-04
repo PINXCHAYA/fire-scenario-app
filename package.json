@@ -1,0 +1,20 @@
+{
+  "name": "mini-decision-task-fire-scenario",
+  "version": "2.0.0",
+  "description": "Museum-ready fire scenario web app with scoring, SQLite storage, Excel export, and admin dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Fire Scenario</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="admin-card">
+      <h1>Admin Dashboard</h1>
+      <p>ใส่ Admin Key เพื่อดูสถิติและ export Excel</p>
+      <input id="adminKey" class="admin-input" type="password" placeholder="Admin Key" />
+      <button id="loadAdminBtn" class="admin-button">โหลดข้อมูล</button>
+      <button id="exportBtn" class="admin-button">Export Excel</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>ภาพรวม</h2>
+      <div class="admin-grid" id="summaryGrid"></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>ผู้ทำล่าสุด</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ชื่อ</th>
+            <th>คะแนน</th>
+            <th>ผลลัพธ์</th>
+            <th>เวลา</th>
+          </tr>
+        </thead>
+        <tbody id="latestRows"></tbody>
+      </table>
+    </div>
+
+    <div class="admin-card">
+      <h2>ข้อมูลผู้ทำทั้งหมดล่าสุด 100 รายการ</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ชื่อ</th>
+            <th>อันดับ 1</th>
+            <th>อันดับ 2</th>
+            <th>อันดับ 3</th>
+            <th>คะแนนรวม</th>
+            <th>ผลลัพธ์</th>
+            <th>บันทึกเมื่อ</th>
+          </tr>
+        </thead>
+        <tbody id="attemptRows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mini Decision Task: Fire Scenario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <div class="screen-overlay"></div>
+      <div class="screen-content">
+        <header class="topbar">
+          <span id="stepIndicator">1 / 8</span>
+          <div id="timerWrap" class="timer-wrap hidden">
+            <div class="alarm-icon" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span id="timerDisplay" class="timer">00:20</span>
+          </div>
+        </header>
+
+        <section id="page1" class="page active intro-page">
+          <div class="hero-spacer"></div>
+          <p class="small-title">MINI DECISION TASK:</p>
+          <h1>FIRE SCENARIO</h1>
+          <label class="label" for="participantName">กรอกชื่อคุณ</label>
+          <input id="participantName" class="text-input" type="text" placeholder="กรอกชื่อ" maxlength="100" autocomplete="name" />
+          <button class="primary-btn bottom-btn" id="startBtn">เริ่ม</button>
+        </section>
+
+        <section id="page2" class="page narrative-page narrative-simple">
+          <div class="narrative-block">
+            <p>ค่ำคืนที่เงียบสงบ...</p>
+            <p>คุณกำลังนอนหลับอยู่</p>
+          </div>
+          <button class="ghost-btn bottom-btn" data-next="3">ถัดไป <span>→</span></button>
+        </section>
+
+        <section id="page3" class="page narrative-page">
+          <div class="narrative-block">
+            <p>คุณได้กลิ่นควัน</p>
+            <p>และมีกลุ่มควันค่อยๆ กระจาย</p>
+            <p>เข้ามาเรื่อยๆ ผ่านช่องประตู</p>
+          </div>
+          <button class="ghost-btn bottom-btn" data-next="4">ถัดไป <span>→</span></button>
+        </section>
+
+        <section id="page4" class="page rules-page">
+          <p class="small-title">MINI DECISION TASK:</p>
+          <h2>FIRE SCENARIO</h2>
+          <div class="rule-box">
+            <p>คุณจะต้องเลือก <strong>3 การกระทำ</strong></p>
+            <p>เพื่อเอาตัวรอดจากระดับควันที่เข้ามา</p>
+            <p>โดยเรียงลำดับความสำคัญ</p>
+            <p>อันดับที่ 1 ถึงอันดับที่ 3</p>
+            <div class="rule-divider"></div>
+            <p>เมื่อเริ่มเวลา คุณมีเวลา <strong class="accent-text">20 วินาที</strong> เท่านั้น</p>
+            <p>เพื่อเลือกวิธีเอาตัวรอดที่สำคัญที่สุด</p>
+          </div>
+          <button class="primary-btn bottom-btn" id="beginQuizBtn">เริ่มเลย</button>
+        </section>
+
+        <section id="page5" class="page quiz-page">
+          <div class="quiz-head">
+            <div class="alarm-icon large" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="rank-title">อันดับ 1</div>
+          </div>
+          <div id="rank1Choices" class="choice-list"></div>
+        </section>
+
+        <section id="page6" class="page quiz-page">
+          <div class="quiz-head">
+            <div class="alarm-icon large" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="rank-title">อันดับ 2</div>
+          </div>
+          <div id="rank2Choices" class="choice-list"></div>
+        </section>
+
+        <section id="page7" class="page quiz-page">
+          <div class="quiz-head">
+            <div class="alarm-icon large" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="rank-title">อันดับ 3</div>
+          </div>
+          <div id="rank3Choices" class="choice-list"></div>
+        </section>
+
+        <section id="page8" class="page result-page">
+          <p class="small-title">MINI DECISION TASK:</p>
+          <h2>FIRE SCENARIO</h2>
+          <h3 id="resultHeading">คุณรอดแล้ว!</h3>
+          <p id="resultDescription"></p>
+          <div class="result-rule-box">
+            <p>หากคุณเจอสถานการณ์ไฟไหม้</p>
+            <p>คุณควรปฏิบัติดังนี้</p>
+            <ol id="resultAdvice"></ol>
+          </div>
+          <p class="result-note">ขอบคุณที่ร่วมสนุกกับกิจกรรมค่ะ</p>
+          <div class="score-box compact">
+            <div>ชื่อผู้ทำ: <strong id="reviewName"></strong></div>
+            <div>คะแนนรวม: <strong id="reviewScore"></strong> / 3</div>
+            <div>ใช้เวลา: <strong id="reviewTime"></strong></div>
+          </div>
+          <button class="primary-btn bottom-btn" id="restartBtn">เริ่มใหม่</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
