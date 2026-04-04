@@ -10,12 +10,12 @@ const Database = require('better-sqlite3');
 const ExcelJS = require('exceljs');
 
 const app = express();
-if (TRUST_PROXY) app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 const ADMIN_KEY = process.env.ADMIN_KEY || 'museum-admin-1234';
 const TRUST_PROXY = String(process.env.TRUST_PROXY || '').toLowerCase() === 'true';
 const DATA_DIR = path.join(__dirname, 'data');
 const DB_PATH = path.join(DATA_DIR, 'fire_scenario.db');
+if (TRUST_PROXY) app.set('trust proxy', 1);
 
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
