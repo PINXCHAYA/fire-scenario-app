@@ -36,3 +36,14 @@ cp .env.example .env
 
 ## Deploy
 ดูไฟล์ `DEPLOY.md`
+
+
+## อัปเดตธีมตาม mockup
+- เปลี่ยนฟอนต์เป็น Kanit
+- หน้า 1 ใช้ `public/assets/home.png`
+- หน้า 2 ใช้ `public/assets/action-1.png`
+- หน้า 3 ใช้ `public/assets/action-2.png`
+- หน้า 4 และ 8 ใช้ `public/assets/rule-result.png`
+- หน้า 5-7 รองรับวิดีโอ `public/assets/action-3.mp4`
+
+หมายเหตุ: ในไฟล์ชุดนี้ยังไม่มีวิดีโอ `action-3.mp4` ที่ผู้ใช้ระบุแนบมา ดังนั้นระบบจะใช้ภาพ `rule-result.png` เป็นพื้นหลังสำรองสำหรับหน้า 5-7 จนกว่าจะใส่วิดีโอไฟล์นี้เพิ่มเข้าไป

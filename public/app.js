@@ -1,4 +1,14 @@
 const PAGES = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'];
+const PAGE_THEMES = {
+  1: 'theme-home',
+  2: 'theme-action-1',
+  3: 'theme-action-2',
+  4: 'theme-rule-result',
+  5: 'theme-action-3',
+  6: 'theme-action-3',
+  7: 'theme-action-3',
+  8: 'theme-rule-result'
+};
 const CHOICES = [
   'ตะโกนบอกคนในบ้าน',
   'คลานต่ำ',
@@ -24,6 +34,27 @@ const participantInput = document.getElementById('participantName');
 const startBtn = document.getElementById('startBtn');
 const beginQuizBtn = document.getElementById('beginQuizBtn');
 const restartBtn = document.getElementById('restartBtn');
+const phoneFrame = document.getElementById('phoneFrame');
+const pageVideoBg = document.getElementById('pageVideoBg');
+
+function applyPageTheme(pageNumber) {
+  const allThemes = Object.values(PAGE_THEMES);
+  phoneFrame.classList.remove(...allThemes);
+  phoneFrame.classList.add(PAGE_THEMES[pageNumber]);
+
+  const shouldShowVideo = pageNumber >= 5 && pageNumber <= 7;
+  pageVideoBg.classList.toggle('hidden', !shouldShowVideo);
+
+  if (shouldShowVideo) {
+    const playPromise = pageVideoBg.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  } else {
+    pageVideoBg.pause();
+    pageVideoBg.currentTime = 0;
+  }
+}
 
 function showPage(pageNumber) {
   state.page = pageNumber;
@@ -33,6 +64,7 @@ function showPage(pageNumber) {
   });
   stepIndicator.textContent = `${Math.min(pageNumber, 8)} / 8`;
   timerWrap.classList.toggle('hidden', !(pageNumber >= 5 && pageNumber <= 7));
+  applyPageTheme(pageNumber);
 }
 
 function formatTime(seconds) {
@@ -164,11 +196,18 @@ async function finishQuiz(completedInTime) {
   const reviewScore = document.getElementById('reviewScore');
   const reviewTime = document.getElementById('reviewTime');
 
+  const isTimeout = !completedInTime;
   const isSurvivor = scores.totalScore === 3;
-  resultHeading.textContent = isSurvivor ? 'คุณรอดแล้ว!' : 'เกือบตุยแล้ว!';
-  resultDescription.textContent = isSurvivor
-    ? 'หากคุณเจอสถานการณ์ไฟไหม้ คุณจะต้องปฏิบัติดังนี้'
-    : 'หากคุณเจอสถานการณ์ไฟไหม้ คุณควรปฏิบัติดังนี้';
+
+  if (isTimeout) {
+    resultHeading.textContent = 'หมดเวลา';
+    resultDescription.textContent = 'คุณใช้เวลาครบ 20 วินาทีแล้ว ระบบได้บันทึกคำตอบที่คุณเลือกไว้และสรุปแนวทางที่ควรทำเมื่อเกิดไฟไหม้ให้ด้านล่าง';
+  } else {
+    resultHeading.textContent = isSurvivor ? 'คุณรอดแล้ว!' : 'เกือบตุยแล้ว!';
+    resultDescription.textContent = isSurvivor
+      ? 'หากคุณเจอสถานการณ์ไฟไหม้ คุณจะต้องปฏิบัติดังนี้'
+      : 'หากคุณเจอสถานการณ์ไฟไหม้ คุณควรปฏิบัติดังนี้';
+  }
 
   resultAdvice.innerHTML = '';
   const adviceItems = [
