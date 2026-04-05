@@ -22,7 +22,7 @@ const state = {
   participantName: '',
   sessionId: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
   selected: [],
-  secondsRemaining: 20,
+  secondsRemaining: 30,
   timerId: null,
   submitted: false
 };
@@ -123,7 +123,7 @@ participantInput.addEventListener('keydown', (event) => {
 
 beginQuizBtn.addEventListener('click', () => {
   state.selected = [];
-  state.secondsRemaining = 20;
+  state.secondsRemaining = 30;
   state.submitted = false;
   updateTimer();
   renderAllChoicePages();
@@ -198,8 +198,8 @@ async function finishQuiz(completedInTime) {
   const isSurvivor = scores.totalScore === 3;
 
   if (isTimeout) {
-    resultHeading.textContent = 'หมดเวลา';
-    resultDescription.textContent = 'คุณใช้เวลาครบ 20 วินาทีแล้ว ระบบได้บันทึกคำตอบที่คุณเลือกไว้และสรุปแนวทางที่ควรทำเมื่อเกิดไฟไหม้ให้ด้านล่าง';
+    resultHeading.textContent = 'หมดเวลา!';
+    resultDescription.textContent = 'คุณใช้เวลาครบ 30 วินาทีแล้ว ระบบได้บันทึกคำตอบที่คุณเลือกไว้และสรุปแนวทางที่ควรทำเมื่อเกิดไฟไหม้ให้ด้านล่าง';
   } else {
     resultHeading.textContent = isSurvivor ? 'คุณรอดแล้ว!' : 'เกือบตุยแล้ว!';
     resultDescription.textContent = isSurvivor
@@ -221,7 +221,7 @@ async function finishQuiz(completedInTime) {
 
   reviewName.textContent = state.participantName;
   reviewScore.textContent = String(scores.totalScore);
-  reviewTime.textContent = `${20 - state.secondsRemaining} วินาที`;
+  reviewTime.textContent = `${30 - state.secondsRemaining} วินาที`;
 
   try {
     await fetch('/api/submit', {
@@ -250,7 +250,7 @@ restartBtn.addEventListener('click', () => {
   state.participantName = '';
   state.sessionId = crypto.randomUUID ? crypto.randomUUID() : String(Date.now());
   state.selected = [];
-  state.secondsRemaining = 20;
+  state.secondsRemaining = 30;
   state.submitted = false;
   participantInput.value = '';
   updateTimer();
