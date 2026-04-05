@@ -182,16 +182,15 @@ h1 {
 }
 
 .home-form-wrap {
-  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 16px; 
+  gap: 16px;
 }
 
 .label {
   display: block;
   color: var(--white);
-  margin-bottom: 4 px;
+  margin-bottom: 4px;
 
   font-family: "Kanit", Arial, sans-serif;
   font-size: 18px; 
@@ -252,8 +251,6 @@ h1 {
   color: var(--white);
   font-weight: 500;
   box-shadow: var(--shadow);
-
-  margin-top: 4px; 
 }
 
 .ghost-btn {
