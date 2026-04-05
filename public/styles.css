@@ -104,10 +104,10 @@ button, input { font: inherit; }
 }
 
 .page-inner {
-  flex: 1;
+  padding: 96px 32px 32px;
   display: flex;
   flex-direction: column;
-  padding: 32px 32px 32px;
+  justify-content: space-between;
 }
 
 .page-inner-centered {
@@ -115,7 +115,10 @@ button, input { font: inherit; }
 }
 
 .page-inner-home {
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .page-inner-quiz {
@@ -124,14 +127,14 @@ button, input { font: inherit; }
 }
 
 .small-title {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   color: var(--white);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
+  font-family: "Kanit", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   line-height: normal;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 /* ===== HEADING ===== */
@@ -175,14 +178,23 @@ h1, h2, h3, .rank-title {
   color: var(--yellow);
 }
 
-.home-form-wrap {
-  margin-top: auto;
+..home-form-wrap {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .label {
   display: block;
   color: var(--white);
   margin-bottom: 12px;
+
+  font-family: "Kanit", Arial, sans-serif;
+  font-size: 16px; 
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 .text-input {
@@ -197,6 +209,10 @@ h1, h2, h3, .rank-title {
 }
 .text-input::placeholder {
   color: var(--placeholder);
+  font-family: "Kanit", Arial, sans-serif;
+  font-size: 16px;  
+  font-weight: 400;
+  line-height: normal;
   text-transform: none;
 }
 .text-input:focus {
@@ -204,7 +220,10 @@ h1, h2, h3, .rank-title {
   outline-offset: 2px;
 }
 
-.bottom-btn { margin-top: auto; }
+.bottom-btn {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
 
 .primary-btn,
 .ghost-btn,
@@ -300,19 +319,23 @@ h1, h2, h3, .rank-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   margin-bottom: 22px;
 }
 
 .rank-icon {
   width: 80px;
   height: 80px;
-  object-fit: contain;
+  margin-bottom: 4px;
 }
 
 .rank-title {
-  color: var(--yellow);
+  font-size: 42px;
   font-weight: 600;
+  color: var(--yellow);
+  margin-top: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
 }
 
 .choice-list {
@@ -372,7 +395,7 @@ h1, h2, h3, .rank-title {
   }
 
   .page-inner {
-    padding-top: 96px;
+    padding-top: 40px;
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 28px;
@@ -399,6 +422,11 @@ h1, h2, h3, .rank-title {
   }
 
   .timer {
-    font-size: 24px;
-  }
+  color: var(--white);
+  font-family: "Kanit", Arial, sans-serif;
+  font-size: 24px;   /* 👈 ลดจาก 28 → 24 */
+  font-weight: 600;  /* 👈 ให้เด่นขึ้น */
+  line-height: normal;
+  text-transform: uppercase;
+}
 }
