@@ -233,7 +233,7 @@ h1 {
 
 .label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   color: var(--white);
 }
 
@@ -292,7 +292,7 @@ h1 {
 .primary-btn {
   width: 100%;
   height: 56px;
-  margin-top: 16px;
+  margin-top: 64px;
   border-radius: 10px;
   background: var(--red);
   color: var(--white);
