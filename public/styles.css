@@ -107,7 +107,7 @@ button, input { font: inherit; }
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 96px 32px 32px;
+  padding: 32px 32px 32px;
 }
 
 .page-inner-centered {
@@ -134,27 +134,18 @@ button, input { font: inherit; }
   text-transform: uppercase;
 }
 
+/* ===== HEADING ===== */
 h1, h2, h3, .rank-title {
-  margin: 0;
   font-family: "Kanit", Arial, sans-serif;
-  font-style: normal;
+  font-size: 42px;
+  font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
-}
-
-h1, h2 {
   color: var(--yellow);
-  font-size: 42px;
-  font-weight: 600;
 }
 
-h3 {
-  color: var(--yellow);
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
+/* ===== BODY / SUBTITLE ===== */
+.body-text,
 .label,
 .narrative-block p,
 .rule-box p,
@@ -163,23 +154,22 @@ h3 {
 .score-box div,
 .result-description,
 .result-note,
-.rank-title,
 .primary-btn,
 .ghost-btn,
 .choice-btn,
 .text-input {
   font-family: "Kanit", Arial, sans-serif;
-  font-size: 24px;
-  font-style: normal;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  color: var(--white);
 }
 
-.highlight-strong {
+/* ===== HIGHLIGHT ===== */
+.highlight {
   font-family: "Kanit", Arial, sans-serif;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
   line-height: 29.25px;
   color: var(--yellow);
