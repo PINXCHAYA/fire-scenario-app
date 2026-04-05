@@ -127,14 +127,13 @@ button, input { font: inherit; }
 }
 
 .small-title {
-  margin: 0 0 12px;
+  margin: 0 0 4px;
   color: var(--white);
   font-family: "Kanit", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 16px;
 }
 
 /* ===== HEADING ===== */
@@ -145,6 +144,10 @@ h1, h2, h3, .rank-title {
   line-height: normal;
   text-transform: uppercase;
   color: var(--yellow);
+}
+h1 {
+  margin-top: 0;        /* ❌ เอาระยะบนออก */
+  margin-bottom: 32px;  /* ✅ เว้นลงมาพอดี */
 }
 
 /* ===== BODY / SUBTITLE ===== */
@@ -162,7 +165,7 @@ h1, h2, h3, .rank-title {
 .choice-btn,
 .text-input {
   font-family: "Kanit", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
@@ -178,11 +181,11 @@ h1, h2, h3, .rank-title {
   color: var(--yellow);
 }
 
-..home-form-wrap {
-  margin-top: 40px;
+.home-form-wrap {
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px; 
 }
 
 .label {
@@ -191,7 +194,7 @@ h1, h2, h3, .rank-title {
   margin-bottom: 12px;
 
   font-family: "Kanit", Arial, sans-serif;
-  font-size: 16px; 
+  font-size: 18px; 
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
@@ -215,9 +218,14 @@ h1, h2, h3, .rank-title {
   line-height: normal;
   text-transform: none;
 }
+.text-input {
+  border-radius: 18px; /* 👈 นุ่มขึ้น */
+}
+
 .text-input:focus {
-  outline: 2px solid rgba(255, 194, 9, 0.75);
-  outline-offset: 2px;
+  outline: none;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 0 4px rgba(255, 194, 9, 0.15); /* glow เบาๆ */
 }
 
 .bottom-btn {
@@ -418,7 +426,7 @@ h1, h2, h3, .rank-title {
   .ghost-btn,
   .choice-btn,
   .text-input {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .timer {
