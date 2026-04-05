@@ -146,8 +146,9 @@ h1, h2, h3, .rank-title {
   color: var(--yellow);
 }
 h1 {
-  margin-top: 0;        
-  margin-bottom: 32px;  
+  margin-top: 0;        /* ❌ เอาระยะบนออก */
+  margin-bottom: 32px;  /* ✅ เว้นลงมาพอดี */
+}
 
 /* ===== BODY / SUBTITLE ===== */
 .body-text,
@@ -181,15 +182,13 @@ h1 {
 }
 
 .home-form-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: 16px; 
 }
 
 .label {
   display: block;
   color: var(--white);
-  margin-bottom: 4px;
+  margin-bottom: 4 px;
 
   font-family: "Kanit", Arial, sans-serif;
   font-size: 18px; 
@@ -228,6 +227,7 @@ h1 {
 
 .bottom-btn {
   margin-top: auto;
+  margin-bottom: 32px;
 }
 
 .primary-btn,
@@ -249,7 +249,8 @@ h1 {
   color: var(--white);
   font-weight: 500;
   box-shadow: var(--shadow);
-  margin-bottom: 32px;
+
+  margin-top: 4px; 
 }
 
 .ghost-btn {
