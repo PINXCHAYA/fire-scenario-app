@@ -27,7 +27,6 @@ const state = {
   submitted: false
 };
 
-const stepIndicator = document.getElementById('stepIndicator');
 const timerDisplay = document.getElementById('timerDisplay');
 const timerWrap = document.getElementById('timerWrap');
 const participantInput = document.getElementById('participantName');
@@ -62,7 +61,6 @@ function showPage(pageNumber) {
     const page = document.getElementById(pageId);
     page.classList.toggle('active', index === pageNumber - 1);
   });
-  stepIndicator.textContent = `${Math.min(pageNumber, 8)} / 8`;
   timerWrap.classList.toggle('hidden', !(pageNumber >= 5 && pageNumber <= 7));
   applyPageTheme(pageNumber);
 }
