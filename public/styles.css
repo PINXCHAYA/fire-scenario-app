@@ -226,7 +226,9 @@ h1 {
 
 /* ===== FORM ===== */
 .home-form-wrap {
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* คุม spacing ทั้งชุด */
 }
 
 .label {
@@ -290,7 +292,7 @@ h1 {
 .primary-btn {
   width: 100%;
   height: 56px;
-  margin-top: 4px;
+  margin-top: 16px;
   border-radius: 10px;
   background: var(--red);
   color: var(--white);
